@@ -543,32 +543,71 @@ class Menu {
         this.tl = (0, _gsapDefault.default).timeline({
             paused: true
         });
+        this.status = false;
         this.initialize();
     }
     initialize() {
-        let self = this;
         this.menuIcon.addEventListener("click", (e)=>{
             this.open();
         });
+        this.overlay.addEventListener("click", ()=>{
+            this.close();
+        });
     }
     open() {
-        (0, _gsapDefault.default).set(this.overlay, {
-            duration: 1000,
+        this.tl.set(this.overlay, {
             display: "block",
-            ease: "power3.easeInOut"
+            ease: "elastic.easeInOut"
         });
-        (0, _gsapDefault.default).to(this.nav, {
-            duration: 300,
-            autoAlpha: 1
+        this.tl.set(this.nav, {
+            display: "block"
         });
-        console.log("opened");
-        // gsap.to('body',{duration:1000,autoAlpha:0})
-        console.log(this.tl);
-        this.tl.play();
+        this.tl.to(this.overlay, {
+            duration: .3,
+            autoAlpha: 1,
+            ease: (0, _gsap.Power4).easeInOut
+        });
+        this.tl.to(this.nav, {
+            duration: .4,
+            translateX: 0,
+            ease: (0, _gsap.Power4).easeInOut
+        }, "-=.3");
+        this.tl.to("main", {
+            duration: .4,
+            translateX: "-250px",
+            ease: (0, _gsap.Power4).easeInOut
+        }, "-=.4");
+        if (this.status == false) {
+            this.tl.play();
+            this.status = true;
+            return;
+        }
+        if (this.tl.reversed()) this.tl.play(0);
+        else this.tl.reverse();
     }
-    close() {}
+    close() {
+        this.tl.reverse();
+    }
 }
 const menu = new Menu();
+let tl = (0, _gsapDefault.default).timeline({
+    delay: 1
+});
+tl.to(".card-top img", {
+    duration: .5,
+    scale: 1.45,
+    ease: (0, _gsap.Expo).easeInOut
+});
+tl.to(".card-socials-bottom", {
+    duration: .5,
+    translateX: "-20%",
+    ease: (0, _gsap.Expo).easeInOut
+}, "-=.5");
+tl.to(".card-contact-address", {
+    duration: .5,
+    translateX: "20%",
+    ease: (0, _gsap.Expo).easeInOut
+}, "-=.5");
 
 },{"gsap":"fPSuC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fPSuC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

@@ -49,12 +49,28 @@ header{
             nav{
                 display:none;
                 position:fixed;
-                transform:translateX(-300px);
+                transform:translateX(250px);
+                transform-origin:right center;
+                background:#FFF;
+                right:0;
+                z-index:5;
+                width:250px;
+                height:100%;
+                ul{
+                    list-style:none;
+                    margin-top:2rem;
+                    padding:0rem 2rem;
+                    li{
+                        margin-top:1.5rem;
+                    }
+                }
              a{
                 @extend %menu-link;
              }
 
                 @include media(">=desktop"){
+                    width:auto;
+                    height:auto;
                     position:static;
                     transform:translate(0,0);
                     display:flex;
@@ -62,7 +78,10 @@ header{
                         display:flex;
                         align-items: center;
                         list-style: none;
+                        margin-top:0;
+                        padding:0;
                         li{
+                            margin-top:0;
                             a{
                                 text-decoration: none;
                                 color:inherit;
@@ -88,11 +107,6 @@ header{
     }
 }
 
-.hero{
-    height:calc(100vh - 70px);
-    width:100%;
-    background:$primary_gradient;
-}
 
 .menu-overlay{
     display:none;
@@ -103,5 +117,68 @@ header{
     background:rgba(0,0,0,.5);
 }
 main{
-    // transform:translateX(-80px);
+    .hero{
+        width:100%;
+        background:$primary_gradient;
+        overflow: hidden;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top:2.5rem;
+   
+        .hero-container{
+            @extend %container-width;
+            margin:0 auto;
+            @include media(">=desktop"){
+                display:grid;
+                grid-template-columns: 1fr 1.4fr;
+                grid-gap:1rem;
+            }
+
+            @include media(">=desktop"){
+
+            }
+
+            .text-content{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                h1{
+                    color:#FFF;
+                    font-weight:800;
+                    font-size:3rem;
+                    margin:0;
+                    @include media(">=md_desktop"){
+                        font-size:4rem;
+                    }
+                }
+                p{  
+                    font-size:1.2rem;
+                    color:#FFF;
+                }
+                .try-hero{
+                    margin-top:2.5rem;
+                    @include media(">=desktop"){
+                        margin-top:3rem;
+                    }
+                    @include media(">=md_desktop"){
+                        margin-top:3.6rem;
+                    }
+                }
+           
+
+            }
+
+            // Card Code Starts
+
+            @extend .card;
+
+
+
+        }
+       
+
+    }
+    
+
 }

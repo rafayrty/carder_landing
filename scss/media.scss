@@ -32,7 +32,10 @@
 $breakpoints: (
   'phone': 320px,
   'tablet': 768px,
-  'desktop': 1024px
+  'desktop': 1024px,
+  'md_desktop':1400px,
+  'lg_desktop':1900px,
+  'xl_desktop':2560px
 ) !default;
 
 

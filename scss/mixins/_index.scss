@@ -1,5 +1,11 @@
 %container-width{
     max-width:88%;
+    @include media(">=desktop"){
+        max-width:85%;
+    }
+    @include media(">=lg_desktop"){
+        max-width:75%;
+    }
 }
 
 %menu-link{

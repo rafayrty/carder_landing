@@ -1,5 +1,17 @@
-header .header-container {
+main .hero .hero-container, header .header-container {
   max-width: 88%;
+}
+
+@media (min-width: 1024px) {
+  main .hero .hero-container, header .header-container {
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 1900px) {
+  main .hero .hero-container, header .header-container {
+    max-width: 75%;
+  }
 }
 
 header .header-container .menu-container nav a {
@@ -171,6 +183,7 @@ template, [hidden] {
 .btn {
   border: none;
   text-decoration: none;
+  display: inline-block;
 }
 
 .btn-gradient {
@@ -179,10 +192,291 @@ template, [hidden] {
 }
 
 .btn-md {
-  color: #fff;
   border-radius: 8px;
   padding: .58rem .94rem;
   font-weight: 600;
+}
+
+.btn-lg {
+  border-radius: 8px;
+  padding: .75rem 1.15rem;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  color: #fff;
+  background: #142558;
+}
+
+.card, main .hero .hero-container {
+  margin-top: 3rem;
+}
+
+.card .card-container, main .hero .hero-container .card-container {
+  margin: 0 auto;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .card .card-container, main .hero .hero-container .card-container {
+    max-width: 56%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .card .card-container, main .hero .hero-container .card-container {
+    max-width: 45%;
+  }
+}
+
+@media (min-width: 1900px) {
+  .card .card-container, main .hero .hero-container .card-container {
+    max-width: 40%;
+  }
+}
+
+.card .card-container .card-bg, main .hero .hero-container .card-container .card-bg {
+  height: 80%;
+  width: 100%;
+  z-index: 0;
+  background: #ecedf1;
+  border-radius: 12px;
+  position: absolute;
+}
+
+.card .card-container .card-inner, main .hero .hero-container .card-container .card-inner {
+  z-index: 3;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  position: relative;
+}
+
+.card .card-container .card-cover, main .hero .hero-container .card-container .card-cover {
+  position: relative;
+}
+
+.card .card-container .card-cover img, main .hero .hero-container .card-container .card-cover img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card .card-container .card-cover:after, main .hero .hero-container .card-container .card-cover:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#0000 0%, #000c 100%);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  position: absolute;
+  left: 0;
+}
+
+.card .card-container .card-main, main .hero .hero-container .card-container .card-main {
+  position: relative;
+  bottom: 100px;
+}
+
+.card .card-container .card-main-top, main .hero .hero-container .card-container .card-main-top {
+  filter: drop-shadow(-11.6752px 17.5128px 14.594px #1425581a);
+  background: #fff;
+  border-radius: 12px;
+  margin: 0 1.2rem;
+  padding: 1rem;
+  position: relative;
+}
+
+.card .card-container .card-main-top .card-top, main .hero .hero-container .card-container .card-main-top .card-top {
+  justify-content: space-between;
+  display: flex;
+}
+
+.card .card-container .card-main-top .card-top img, main .hero .hero-container .card-container .card-main-top .card-top img {
+  width: 105px;
+  height: 105px;
+  object-fit: cover;
+  filter: drop-shadow(-8.76821px 13.1523px 10.9603px #1425581a);
+  transform-origin: 100% 100%;
+  border: 4px solid #fff;
+  border-radius: 12.0162px;
+}
+
+.card .card-container .card-main-top .card-top .card-buttons, main .hero .hero-container .card-container .card-main-top .card-top .card-buttons {
+  flex-direction: column;
+  margin-top: .5rem;
+  display: flex;
+}
+
+.card .card-container .card-main-top .card-top .card-buttons a, main .hero .hero-container .card-container .card-main-top .card-top .card-buttons a {
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: .2rem .4rem;
+  font-size: .5rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+}
+
+.card .card-container .card-main-top .card-top .card-buttons a.save-contact, main .hero .hero-container .card-container .card-main-top .card-top .card-buttons a.save-contact {
+  color: #2c29ba;
+  border: 1px solid #2c29ba;
+}
+
+.card .card-container .card-main-top .card-top .card-buttons a.save-contact svg, main .hero .hero-container .card-container .card-main-top .card-top .card-buttons a.save-contact svg {
+  width: 17px;
+  height: 17px;
+  color: currentColor;
+}
+
+.card .card-container .card-main-top .card-top .card-buttons a.share-contact, main .hero .hero-container .card-container .card-main-top .card-top .card-buttons a.share-contact {
+  color: #fff;
+  background: #2c29ba;
+}
+
+.card .card-container .card-main-top .card-top .card-buttons .button:last-child, main .hero .hero-container .card-container .card-main-top .card-top .card-buttons .button:last-child {
+  margin-top: .5rem;
+}
+
+.card .card-container .card-main-top .card-info, main .hero .hero-container .card-container .card-main-top .card-info {
+  margin-top: .3rem;
+}
+
+.card .card-container .card-main-top .card-info h2, main .hero .hero-container .card-container .card-main-top .card-info h2 {
+  font-size: 1.15rem;
+}
+
+.card .card-container .card-main-top .card-info p, main .hero .hero-container .card-container .card-main-top .card-info p {
+  opacity: .7;
+  margin-top: .2rem;
+  font-size: .65rem;
+}
+
+.card .card-container .card-main-top .card-info strong, main .hero .hero-container .card-container .card-main-top .card-info strong {
+  font-size: .7rem;
+}
+
+.card .card-container .card-main-top .card-bio, main .hero .hero-container .card-container .card-main-top .card-bio {
+  padding-top: .8rem;
+}
+
+.card .card-container .card-main-top .card-bio p, main .hero .hero-container .card-container .card-main-top .card-bio p {
+  opacity: .7;
+  letter-spacing: .1px;
+  font-size: .65rem;
+  line-height: 1.2;
+}
+
+.card .card-container .card-socials-bottom, main .hero .hero-container .card-container .card-socials-bottom {
+  filter: drop-shadow(-11.6752px 17.5128px 14.594px #1425581a);
+  background: #fff;
+  border-radius: 16px;
+  margin: 1rem 1.2rem 0;
+  padding: 1rem;
+}
+
+.card .card-container .card-socials-bottom h5, main .hero .hero-container .card-container .card-socials-bottom h5 {
+  color: #2c29ba;
+  font-size: .65rem;
+}
+
+.card .card-container .card-socials-bottom .socials, main .hero .hero-container .card-container .card-socials-bottom .socials {
+  padding: .5rem 0;
+  display: flex;
+}
+
+.card .card-container .card-socials-bottom .socials .social, main .hero .hero-container .card-container .card-socials-bottom .socials .social {
+  width: 35px;
+  height: 35px;
+  background: #eaeaf9;
+  border-radius: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.card .card-container .card-socials-bottom .socials .social:not(:first-child), main .hero .hero-container .card-container .card-socials-bottom .socials .social:not(:first-child) {
+  margin-left: .5rem;
+}
+
+.card .card-container .card-socials-bottom .socials .social svg, main .hero .hero-container .card-container .card-socials-bottom .socials .social svg {
+  width: 18px;
+  height: 18px;
+}
+
+.card .card-container .card-contact-address, main .hero .hero-container .card-container .card-contact-address {
+  filter: drop-shadow(-11.6752px 17.5128px 14.594px #1425581a);
+  background: #fff;
+  border-radius: 12px;
+  margin: 1rem 1.2rem 0;
+  position: relative;
+}
+
+.card .card-container .card-contact-address .card-address-bottom .card-address-info, main .hero .hero-container .card-container .card-contact-address .card-address-bottom .card-address-info {
+  align-items: center;
+  padding: 1rem;
+  display: flex;
+}
+
+.card .card-container .card-contact-address .card-address-bottom .card-address-info .address-icon, main .hero .hero-container .card-container .card-contact-address .card-address-bottom .card-address-info .address-icon {
+  width: 36px;
+  height: 42px;
+}
+
+.card .card-container .card-contact-address .card-address-bottom .card-address-info .address-text, main .hero .hero-container .card-container .card-contact-address .card-address-bottom .card-address-info .address-text {
+  margin-left: 1rem;
+}
+
+.card .card-container .card-contact-address .card-address-bottom .card-address-info .address-text h5, main .hero .hero-container .card-container .card-contact-address .card-address-bottom .card-address-info .address-text h5 {
+  font-size: .75rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.card .card-container .card-contact-address .card-address-bottom .card-address-info .address-text p, main .hero .hero-container .card-container .card-contact-address .card-address-bottom .card-address-info .address-text p {
+  margin-top: .2rem;
+  font-size: .65rem;
+  line-height: 1;
+}
+
+.card .card-container .card-contact-address .card-address-bottom .card-address-info .address-text a, main .hero .hero-container .card-container .card-contact-address .card-address-bottom .card-address-info .address-text a {
+  color: #2c29ba;
+  margin: 0;
+  font-size: .65rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.card .card-container .card-contact-address .card-contact, main .hero .hero-container .card-container .card-contact-address .card-contact {
+  background: #2c29ba;
+  border-radius: 12px;
+}
+
+.card .card-container .card-contact-address .card-contact-container, main .hero .hero-container .card-container .card-contact-address .card-contact-container {
+  max-width: 88%;
+  justify-content: space-around;
+  margin: 0 auto;
+  display: flex;
+}
+
+.card .card-container .card-contact-address .card-contact-container .contact, main .hero .hero-container .card-container .card-contact-address .card-contact-container .contact {
+  padding: 1.1rem .8rem;
+}
+
+.card .card-container .card-contact-address .card-contact-container .contact a, main .hero .hero-container .card-container .card-contact-address .card-contact-container .contact a {
+  color: #fff;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  display: flex;
+}
+
+.card .card-container .card-contact-address .card-contact-container .contact a p, main .hero .hero-container .card-container .card-contact-address .card-contact-container .contact a p {
+  font-size: .5rem;
 }
 
 header .header-container {
@@ -238,13 +532,31 @@ header .header-container .menu-container .menu-icon li:not(:first-child) {
 }
 
 header .header-container .menu-container nav {
+  transform-origin: 100%;
+  z-index: 5;
+  width: 250px;
+  height: 100%;
+  background: #fff;
   display: none;
   position: fixed;
-  transform: translateX(-300px);
+  right: 0;
+  transform: translateX(250px);
+}
+
+header .header-container .menu-container nav ul {
+  margin-top: 2rem;
+  padding: 0 2rem;
+  list-style: none;
+}
+
+header .header-container .menu-container nav ul li {
+  margin-top: 1.5rem;
 }
 
 @media (min-width: 1024px) {
   header .header-container .menu-container nav {
+    width: auto;
+    height: auto;
     display: flex;
     position: static;
     transform: translate(0);
@@ -252,8 +564,14 @@ header .header-container .menu-container nav {
 
   header .header-container .menu-container nav ul {
     align-items: center;
+    margin-top: 0;
+    padding: 0;
     list-style: none;
     display: flex;
+  }
+
+  header .header-container .menu-container nav ul li {
+    margin-top: 0;
   }
 
   header .header-container .menu-container nav ul li a {
@@ -276,12 +594,6 @@ header .header-container .try {
   }
 }
 
-.hero {
-  height: calc(100vh - 70px);
-  width: 100%;
-  background: linear-gradient(91.9deg, #007aff 1.98%, #4da2ff 101.08%);
-}
-
 .menu-overlay {
   opacity: 0;
   width: 100%;
@@ -289,6 +601,68 @@ header .header-container .try {
   background: #00000080;
   display: none;
   position: fixed;
+}
+
+main .hero {
+  width: 100%;
+  background: linear-gradient(91.9deg, #007aff 1.98%, #4da2ff 101.08%);
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+  display: flex;
+  overflow: hidden;
+}
+
+main .hero .hero-container {
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  main .hero .hero-container {
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1.4fr;
+    display: grid;
+  }
+}
+
+main .hero .hero-container .text-content {
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+}
+
+main .hero .hero-container .text-content h1 {
+  color: #fff;
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+@media (min-width: 1400px) {
+  main .hero .hero-container .text-content h1 {
+    font-size: 4rem;
+  }
+}
+
+main .hero .hero-container .text-content p {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+main .hero .hero-container .text-content .try-hero {
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  main .hero .hero-container .text-content .try-hero {
+    margin-top: 3rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  main .hero .hero-container .text-content .try-hero {
+    margin-top: 3.6rem;
+  }
 }
 
 * {
