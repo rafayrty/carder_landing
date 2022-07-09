@@ -1,0 +1,19 @@
+@import 'media';
+@import 'variables';
+@import 'mixins';
+@import 'normalize.scss';  
+
+/* Components */
+@import 'components/header.scss';
+@import 'components/footer.scss';
+@import 'components/button.scss';
+
+/* Pages */
+@import 'pages/home.scss';
+
+*{
+    font-family:'Noto Sans',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}

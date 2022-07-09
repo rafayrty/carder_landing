@@ -1,0 +1,15 @@
+// Global Button Styles
+.btn{
+    border:none;
+    text-decoration: none; 
+}
+.btn-gradient{
+    background:$primary_gradient;
+    color:#FFF;
+}
+.btn-md{
+    border-radius: 8px;
+    color:#FFF;
+    font-weight:600;
+    padding:.58rem .94rem;
+}
