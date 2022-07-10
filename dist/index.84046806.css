@@ -209,10 +209,12 @@ template, [hidden] {
 }
 
 .card, main .hero .hero-container {
+  --card-color: #2c29ba;
   margin-top: 3rem;
 }
 
 .card .card-container, main .hero .hero-container .card-container {
+  z-index: 5;
   margin: 0 auto;
   position: relative;
 }
@@ -231,7 +233,7 @@ template, [hidden] {
 
 @media (min-width: 1900px) {
   .card .card-container, main .hero .hero-container .card-container {
-    max-width: 40%;
+    max-width: 55%;
   }
 }
 
@@ -321,8 +323,8 @@ template, [hidden] {
 }
 
 .card .card-container .card-main-top .card-top .card-buttons a.save-contact, main .hero .hero-container .card-container .card-main-top .card-top .card-buttons a.save-contact {
-  color: #2c29ba;
-  border: 1px solid #2c29ba;
+  color: var(--card-color);
+  border: 1px solid var(--card-color);
 }
 
 .card .card-container .card-main-top .card-top .card-buttons a.save-contact svg, main .hero .hero-container .card-container .card-main-top .card-top .card-buttons a.save-contact svg {
@@ -333,7 +335,7 @@ template, [hidden] {
 
 .card .card-container .card-main-top .card-top .card-buttons a.share-contact, main .hero .hero-container .card-container .card-main-top .card-top .card-buttons a.share-contact {
   color: #fff;
-  background: #2c29ba;
+  background: var(--card-color);
 }
 
 .card .card-container .card-main-top .card-top .card-buttons .button:last-child, main .hero .hero-container .card-container .card-main-top .card-top .card-buttons .button:last-child {
@@ -378,7 +380,7 @@ template, [hidden] {
 }
 
 .card .card-container .card-socials-bottom h5, main .hero .hero-container .card-container .card-socials-bottom h5 {
-  color: #2c29ba;
+  color: var(--card-color);
   font-size: .65rem;
 }
 
@@ -388,6 +390,7 @@ template, [hidden] {
 }
 
 .card .card-container .card-socials-bottom .socials .social, main .hero .hero-container .card-container .card-socials-bottom .socials .social {
+  color: var(--card-color);
   width: 35px;
   height: 35px;
   background: #eaeaf9;
@@ -443,7 +446,7 @@ template, [hidden] {
 }
 
 .card .card-container .card-contact-address .card-address-bottom .card-address-info .address-text a, main .hero .hero-container .card-container .card-contact-address .card-address-bottom .card-address-info .address-text a {
-  color: #2c29ba;
+  color: var(--card-color);
   margin: 0;
   font-size: .65rem;
   font-weight: 600;
@@ -452,7 +455,7 @@ template, [hidden] {
 }
 
 .card .card-container .card-contact-address .card-contact, main .hero .hero-container .card-container .card-contact-address .card-contact {
-  background: #2c29ba;
+  background: var(--card-color);
   border-radius: 12px;
 }
 
@@ -477,6 +480,51 @@ template, [hidden] {
 
 .card .card-container .card-contact-address .card-contact-container .contact a p, main .hero .hero-container .card-container .card-contact-address .card-contact-container .contact a p {
   font-size: .5rem;
+}
+
+.card .card-outer-container, main .hero .hero-container .card-outer-container {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.card .card-outer-container .card-personal, main .hero .hero-container .card-outer-container .card-personal {
+  width: 280px;
+  opacity: 0;
+  position: absolute;
+  top: 4%;
+  right: -20%;
+  transform: translateX(-100%);
+}
+
+.card .card-outer-container .card-social, main .hero .hero-container .card-outer-container .card-social {
+  width: 299px;
+  opacity: 0;
+  z-index: 6;
+  position: absolute;
+  top: 4%;
+  right: -16%;
+  transform: translateX(-100%);
+}
+
+.card .card-outer-container .card-style, main .hero .hero-container .card-outer-container .card-style {
+  width: 299px;
+  opacity: 0;
+  z-index: 7;
+  position: absolute;
+  top: 4%;
+  right: -22%;
+  transform: translateX(-100%);
+}
+
+.card .card-outer-container .card-share, main .hero .hero-container .card-outer-container .card-share {
+  width: 350px;
+  opacity: 0;
+  z-index: 7;
+  position: absolute;
+  top: 4%;
+  right: -22%;
+  transform: translateX(-100%);
 }
 
 header .header-container {
@@ -620,15 +668,32 @@ main .hero .hero-container {
 @media (min-width: 1024px) {
   main .hero .hero-container {
     grid-gap: 1rem;
+    width: 100%;
     grid-template-columns: 1fr 1.4fr;
     display: grid;
   }
 }
 
-main .hero .hero-container .text-content {
+main .hero .hero-container .slide {
+  width: 100%;
+  display: none;
+  position: relative;
+}
+
+main .hero .hero-container .slide-active {
+  height: 100%;
   flex-direction: column;
   justify-content: center;
   display: flex;
+}
+
+main .hero .hero-container .slide-out {
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  position: absolute;
 }
 
 main .hero .hero-container .text-content h1 {
@@ -646,6 +711,7 @@ main .hero .hero-container .text-content h1 {
 
 main .hero .hero-container .text-content p {
   color: #fff;
+  margin-top: 1rem;
   font-size: 1.2rem;
 }
 
@@ -670,6 +736,10 @@ main .hero .hero-container .text-content .try-hero {
   margin: 0;
   padding: 0;
   font-family: Noto Sans, sans-serif;
+}
+
+body {
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=index.84046806.css.map */

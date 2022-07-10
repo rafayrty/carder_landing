@@ -133,16 +133,35 @@ main{
                 display:grid;
                 grid-template-columns: 1fr 1.4fr;
                 grid-gap:1rem;
+                width:100%;
             }
 
             @include media(">=desktop"){
 
             }
 
+            .slide{
+                display:none;
+                position:relative;
+                width:100%;
+                &-active{
+                    display:flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    height:100%;
+                }
+                &-out{
+                    display:flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    height:100%;
+                    position:absolute;
+                    width:100%;
+                }
+            }
+
             .text-content{
-                display:flex;
-                flex-direction: column;
-                justify-content: center;
+     
                 h1{
                     color:#FFF;
                     font-weight:800;
@@ -155,6 +174,7 @@ main{
                 p{  
                     font-size:1.2rem;
                     color:#FFF;
+                    margin-top:1rem;
                 }
                 .try-hero{
                     margin-top:2.5rem;
